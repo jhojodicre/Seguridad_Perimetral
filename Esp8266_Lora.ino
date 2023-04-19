@@ -46,8 +46,8 @@
     int packetSize = 0;
     String outgoing;              // outgoing message
     byte msgCount = 0;            // count of outgoing messages
-    byte localAddress = 0xBC;     // address of this device
-    byte destination = 0xFF;      // destination to send to
+    byte localAddress = 0xFF;     // address of this device
+    byte destination = 0x01;      // destination to send to
     long lastSendTime = 0;        // last send time
     int interval = 2000;          // interval between sends.
 
@@ -173,20 +173,7 @@ void loop() {
     }
   }
   void f2_serial_Enviar(int par1){
-    // Deshabilitamos Banderas
-    int counter=par1;
-    Serial.print("Sending packet: ");
-    Serial.println(counter);
-
-    // send packet
-    LoRa.beginPacket();
-    LoRa.print("hello ");
-    LoRa.print(counter);
-    LoRa.endPacket();
-
-    // counter++;
-
-    delay(5000);
+    Serial.println("a");
   }
   void f3_XXXXX_reserva(int par1){
     int uno=0;
